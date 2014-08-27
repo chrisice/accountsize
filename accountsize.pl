@@ -6,4 +6,5 @@ my $dir = $ARGV[0];
 my $size;
 find(sub{ -f and ( $size += -s ) }, $dir );
 $size = sprintf("%.02f",$size / 1024 / 1024);
-print "Directory '$dir' contains $size MB\n";
+my $size2 = $size / 1000;
+print "$dir : $size MB ( $size2 GB )\n";
